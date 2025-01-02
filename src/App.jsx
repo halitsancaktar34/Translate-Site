@@ -45,8 +45,8 @@ const App = () => {
   return (
     <div id="main-page">
       <div className="container">
-        <h1>Çeviri +</h1>
-        {/* üst kısım */}
+        <h1>Translate +</h1>
+        {/* upper section */}
         <div className="upper">
           <Select
             className="select"
@@ -56,7 +56,7 @@ const App = () => {
             isLoading={state.isLangsLoading}
             isDisabled={state.isLangsLoading}
           />
-          <button onClick={handleSwap}>Değiş</button>
+          <button onClick={handleSwap}>Swap</button>
           <Select
             className="select"
             options={refinedData}
@@ -66,7 +66,7 @@ const App = () => {
             isDisabled={state.isLangsLoading}
           />
         </div>
-        {/* orta kısım */}
+        {/* middle section */}
         <div className="middle">
           <div>
             <textarea value={text} onChange={(e) => setText(e.target.value)} />
@@ -78,13 +78,13 @@ const App = () => {
             <textarea value={state.translatedText} disabled />
           </div>
         </div>
-        {/* alt kısım */}
+        {/* lower section */}
         <button
           onClick={() =>
             dispatch(translateText({ sourceLang, targetLang, text }))
           }
         >
-          Çevir
+          Translate
         </button>
       </div>
     </div>
